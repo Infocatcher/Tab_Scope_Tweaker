@@ -4,4 +4,4 @@
 * Move title label to top of popup
 
 I used my own modification of Tab Scope in some years (oh!) and finally decide to create a better “patch”.
-So this extension just does what I want.
+<br>So this extension just does what I want.
