@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	 xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+	<Description about="urn:mozilla:install-manifest">
+		<em:id>tabScopeTweaker@infocatcher</em:id>
+		<em:type>2</em:type>
+		<em:bootstrap>true</em:bootstrap>
+		<em:name>Tab Scope Tweaker</em:name>
+		<em:version>0.1.0</em:version>
+		<em:description>Some tweaks for Tab Scope extension</em:description>
+		<em:creator>Infocatcher</em:creator>
+		<em:contributor>Icon: from Tab Scope extension + wrench icon from Farm-fresh icon set (http://fatcow.com/free-icons)</em:contributor>
+		<em:updateURL>http://infocatcher.ucoz.net/ext/fx/tab_scope_tweaker/update.rdf</em:updateURL>
+		<em:updateKey>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDLgtEbrhCdZetIAanFNvkT441WwBgXcg1Zzlo5s5
+		              j9VLByj/L6UXAVqSria1dejjkKfxVbRXvqalJ7mENRambKpZ4AfV3dBCKUDjME56CMaAK7+DxMqaM3
+		              KEDKXn8XfqL2qkFsgcVjqh6AfltKRcyLGkU9+YQ82EXo6xm47hywoQIDAQAB</em:updateKey>
+
+		<em:targetApplication> <!-- Firefox -->
+			<Description>
+				<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+				<em:minVersion>17.0</em:minVersion>
+				<em:maxVersion>24.0a1</em:maxVersion>
+			</Description>
+		</em:targetApplication>
+
+		<em:localized>
+			<Description>
+				<em:locale>en-US</em:locale>
+				<em:name>Tab Scope Tweaker</em:name>
+				<em:description>Some tweaks for Tab Scope extension</em:description>
+				<em:creator>Infocatcher</em:creator>
+				<em:contributor>Icon: from Tab Scope extension + wrench icon from Farm-fresh icon set (http://fatcow.com/free-icons)</em:contributor>
+			</Description>
+		</em:localized>
+
+		<em:localized>
+			<Description>
+				<em:locale>ru</em:locale>
+				<em:name>Tab Scope Tweaker</em:name>
+				<em:description>Некоторые улучшения для расширения Tab Scope</em:description>
+				<em:creator>Infocatcher</em:creator>
+				<em:contributor>Иконка: из расширения Tab Scope + иконка гаечного ключа из набора Farm-fresh (http://fatcow.com/free-icons)</em:contributor>
+			</Description>
+		</em:localized>
+
+	</Description>
+</RDF>

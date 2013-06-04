@@ -1,0 +1,19 @@
+﻿@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+@-moz-document url("chrome://browser/content/browser.xul") {
+	#tabscope-title {
+		margin: 0 0 3px 0 !important;
+		text-align: center;
+	}
+	#tabscope-uri {
+		margin: 3px 0 0 0 !important;
+		text-align: center;
+	}
+
+	#tabscope-popup[_alignment="1"] > #tabscope-title {
+		margin: 3px 0 0 0 !important;
+	}
+	#tabscope-popup[_alignment="1"] > #tabscope-uri {
+		margin: 0 0 3px 0 !important;
+	}
+}
