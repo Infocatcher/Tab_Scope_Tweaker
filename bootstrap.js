@@ -150,7 +150,8 @@ var tsTweaker = {
 		if(watch) {
 			var mo = new window.MutationObserver(this.handleMutationsFixed);
 			mo.observe(tsTitle, {
-				attributes: true
+				attributes: true,
+				attributeFilter: ["value", "style"]
 			});
 			tsTitle._tabScopeTweakerMutationObserver = mo;
 		}
@@ -165,14 +166,7 @@ var tsTweaker = {
 		return this.handleMutationsFixed = this.handleMutations.bind(this);
 	},
 	handleMutations: function(mutations) {
-		mutations.some(function(mutation) {
-			var attr = mutation.attributeName;
-			if(attr == "value" || attr == "style") {
-				this.updateUri(mutation.target);
-				return true;
-			}
-			return false;
-		}, this);
+		this.updateUri(mutations[0].target);
 	},
 	updateUri: function(tsTitle) {
 		var document = tsTitle.ownerDocument;
