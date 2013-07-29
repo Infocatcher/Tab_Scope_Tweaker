@@ -151,7 +151,7 @@ var tsTweaker = {
 			var mo = new window.MutationObserver(this.handleMutationsFixed);
 			mo.observe(tsTitle, {
 				attributes: true,
-				attributeFilter: ["value", "style"]
+				attributeFilter: ["value", "tooltiptext", "style"]
 			});
 			tsTitle._tabScopeTweakerMutationObserver = mo;
 		}
