@@ -105,6 +105,10 @@ var tsTweaker = {
 	tweakPanel: function(window, tweak) {
 		var document = window.document;
 		var tsTitle = document.getElementById("tabscope-title");
+		if(!tsTitle) {
+			Components.utils.reportError(LOG_PREFIX + "#tabscope-title not found");
+			return;
+		}
 		var tsPanel = tsTitle.parentNode;
 		if(tweak) {
 			var tsUri = document.createElement("label");
@@ -148,6 +152,8 @@ var tsTweaker = {
 	},
 	watchChanges: function(window, watch) {
 		var tsTitle = window.document.getElementById("tabscope-title");
+		if(!tsTitle)
+			return;
 		if(watch) {
 			var mo = new window.MutationObserver(this.handleMutationsFixed);
 			mo.observe(tsTitle, {
