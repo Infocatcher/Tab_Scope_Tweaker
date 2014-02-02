@@ -38,7 +38,8 @@ var tsTweaker = {
 			this.destroyWindow(ws.getNext(), reason);
 		Services.ww.unregisterNotification(this);
 
-		this.loadStyles(false);
+		if(reason != APP_SHUTDOWN)
+			this.loadStyles(false);
 	},
 
 	observe: function(subject, topic, data) {
