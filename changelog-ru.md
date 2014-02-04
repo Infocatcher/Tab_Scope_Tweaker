@@ -6,6 +6,7 @@
 `*` - улучшено<br>
 
 ##### master/HEAD
+##### 0.1.1 (2014-02-04)
 `*` Немного улучшена производительность: используются настройки <a href="https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver">MutationObserver</a>'а, чтобы не обрабатывать изменения всех атрибутов.<br>
 `x` Исправлена утечка памяти, если Tab Scope не установлен.<br>
 

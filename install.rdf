@@ -7,7 +7,7 @@
 		<em:type>2</em:type>
 		<em:bootstrap>true</em:bootstrap>
 		<em:name>Tab Scope Tweaker</em:name>
-		<em:version>0.1.0</em:version>
+		<em:version>0.1.1</em:version>
 		<em:description>Some tweaks for Tab Scope extension</em:description>
 		<em:creator>Infocatcher</em:creator>
 		<em:contributor>Icon: from Tab Scope extension + wrench icon from Farm-fresh icon set (http://fatcow.com/free-icons)</em:contributor>
