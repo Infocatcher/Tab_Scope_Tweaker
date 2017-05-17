@@ -14,7 +14,7 @@ License.
 The Original Code is Tab Scope Tweaker.
 The Initial Developer of the Original Code is Infocatcher.
 
-Portions created by the Initial Developer are Copyright (C) 2013-2014
+Portions created by the Initial Developer are Copyright (C) 2013-2014, 2017
 the Initial Developer. All Rights Reserved.
 
 Contributor(s):
