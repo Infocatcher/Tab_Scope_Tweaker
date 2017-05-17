@@ -6,6 +6,7 @@
 		<em:id>tabScopeTweaker@infocatcher</em:id>
 		<em:type>2</em:type>
 		<em:bootstrap>true</em:bootstrap>
+		<em:multiprocessCompatible>true</em:multiprocessCompatible>
 		<em:name>Tab Scope Tweaker</em:name>
 		<em:version>0.1.1</em:version>
 		<em:description>Some tweaks for Tab Scope extension</em:description>
