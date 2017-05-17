@@ -81,7 +81,7 @@ var tsTweaker = {
 
 	_stylesLoaded: false,
 	loadStyles: function(add) {
-		if(!add ^ this._stylesLoaded)
+		if(add == this._stylesLoaded)
 			return;
 		this._stylesLoaded = add;
 		var cssURI = Services.io.newURI("chrome://tabscopetweaker/content/styles.css", null, null);
@@ -94,7 +94,7 @@ var tsTweaker = {
 	},
 	loadSheet: function(cssURI, load) {
 		var sss = this.sss;
-		if(!load ^ sss.sheetRegistered(cssURI, sss.USER_SHEET))
+		if(load == sss.sheetRegistered(cssURI, sss.USER_SHEET))
 			return;
 		if(load)
 			sss.loadAndRegisterSheet(cssURI, sss.USER_SHEET);
