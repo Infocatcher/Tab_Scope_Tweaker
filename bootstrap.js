@@ -37,9 +37,6 @@ var tsTweaker = {
 		while(ws.hasMoreElements())
 			this.destroyWindow(ws.getNext(), reason);
 		Services.ww.unregisterNotification(this);
-
-		if(reason != APP_SHUTDOWN)
-			this.loadStyles(false);
 	},
 
 	observe: function(subject, topic, data) {
@@ -60,7 +57,7 @@ var tsTweaker = {
 		if(reason == WINDOW_LOADED && !this.isTargetWindow(window))
 			return;
 		window.setTimeout(function() {
-			this.loadStyles(true);
+			this.loadStyles(window, true);
 			window.setTimeout(function() {
 				this.tweakPanel(window, true);
 				this.watchChanges(window, true);
@@ -74,32 +71,29 @@ var tsTweaker = {
 		var force = reason != APP_SHUTDOWN && reason != WINDOW_CLOSED;
 		force && this.tweakPanel(window, false);
 		this.watchChanges(window, false);
+		this.loadStyles(window, false);
 	},
 	isTargetWindow: function(window) {
 		return window.document.documentElement.getAttribute("windowtype") == "navigator:browser";
 	},
 
-	_stylesLoaded: false,
-	loadStyles: function(add) {
-		if(add == this._stylesLoaded)
-			return;
-		this._stylesLoaded = add;
-		var cssURI = Services.io.newURI("chrome://tabscopetweaker/content/styles.css", null, null);
-		this.loadSheet(cssURI, add);
-	},
-	get sss() {
-		delete this.sss;
-		return this.sss = Components.classes["@mozilla.org/content/style-sheet-service;1"]
-			.getService(Components.interfaces.nsIStyleSheetService);
-	},
-	loadSheet: function(cssURI, load) {
-		var sss = this.sss;
-		if(load == sss.sheetRegistered(cssURI, sss.USER_SHEET))
-			return;
-		if(load)
-			sss.loadAndRegisterSheet(cssURI, sss.USER_SHEET);
-		else
-			sss.unregisterSheet(cssURI, sss.USER_SHEET);
+	loadStyles: function(window, add) {
+		var cssURL = "chrome://tabscopetweaker/content/styles.css";
+		var document = window.document;
+		var data = 'href="' + cssURL + '" type="text/css"';
+		if(add) {
+			document.insertBefore(document.createProcessingInstruction(
+				"xml-stylesheet", data
+			), document.documentElement);
+		}
+		else {
+			for(var child = document.documentElement; child = child.previousSibling; ) {
+				if(child.nodeType == child.PROCESSING_INSTRUCTION_NODE && child.data == data) {
+					child.parentNode.removeChild(child);
+					break;
+				}
+			}
+		}
 	},
 
 	tweakPanel: function(window, tweak) {
