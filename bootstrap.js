@@ -47,7 +47,7 @@ var tsTweaker = {
 	},
 	handleEvent: function(e) {
 		if(e.type == "load") {
-			var window = e.originalTarget.defaultView;
+			var window = e.currentTarget;
 			window.removeEventListener("load", this, false);
 			this.initWindow(window, WINDOW_LOADED);
 		}
