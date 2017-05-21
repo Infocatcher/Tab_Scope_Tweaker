@@ -6,6 +6,7 @@
 `*` - improved<br>
 
 ##### master/HEAD
+##### 0.1.2 (2017-05-21)
 `+` Added “multiprocess compatible” flag.<br>
 `*` Improved styles performance: now inserts only into browser window (stopped using of global styles).<br>
 
